@@ -46,7 +46,9 @@ public class LivrariaCliente {
                 break;
             case 2:
                 //Comprar livro(alterar a quantidade de um livro já existente e o saldo)
-                System.out.println(proxy.consultarEstoque());
+                for (int i = 0; i < proxy.consultarEstoque().size(); i++){
+                    System.out.println(proxy.consultarEstoque().get(i));
+                }
                 System.out.println("Informe o id o livro que deseja comprar");
                 int id = Integer.parseInt(scanner.nextLine());
                 System.out.println("Agora informe quantos livros deseja comprar");
@@ -59,8 +61,9 @@ public class LivrariaCliente {
             case 3:
                 boolean vendendo = true;
                 while (vendendo) {
-                    System.out.println(proxy.consultarEstoque());
-
+                    for (int i = 0; i < proxy.consultarEstoque().size(); i++){
+                        System.out.println(proxy.consultarEstoque().get(i));
+                    }
                     System.out.println("Qual o id do livro que deseja vender?");
                     id = Integer.parseInt(scanner.nextLine());
                     System.out.println("Qual a quantidade que deseja vender?");
@@ -75,6 +78,8 @@ public class LivrariaCliente {
                 break;
             case 4:
                 System.out.println(proxy.consultarSaldo());
+                System.out.println("Aperte Enter para voltar ao menu");
+                scanner.nextLine();
                 break;
             case 5:
                 System.out.println(proxy.consultarVendas());
@@ -82,7 +87,9 @@ public class LivrariaCliente {
                 scanner.nextLine();
                 break;
             case 6:
-                System.out.println(proxy.consultarEstoque());
+                for (int i = 0; i < proxy.consultarEstoque().size(); i++){
+                    System.out.println(proxy.consultarEstoque().get(i));
+                }
                 break;
             case 0:
                 proxy.finaliza();

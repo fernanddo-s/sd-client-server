@@ -24,16 +24,20 @@ public class LivrariaEsqueleto {
         return Double.toString(livraria.getSaldo());
     }
 
-    public String comprarLivro(Livro livro) {
+    public String comprarLivro(String args) {
+        Gson gson = new Gson();
+        Livro livro = gson.fromJson(args, Livro.class);
         return livraria.comprarLivro(livro);
     }
 
-    public String renovarEstoque(int id, int qtdCompra) {
-        return livraria.renovarEstoque(id, qtdCompra);
+    public String renovarEstoque(String args) {
+        String[] str = args.split(" ");
+        return livraria.renovarEstoque(Integer.parseInt(str[0]), Integer.parseInt(str[1]));
     }
 
-    public String venderLivro(int id, int qtdVenda) {
-        return livraria.venderLivro(id, qtdVenda);
+    public String venderLivro(String args) {
+        String[] str = args.split(" ");
+        return livraria.venderLivro(Integer.parseInt(str[0]), Integer.parseInt(str[1]));
     }
 
     public String consultarVendas() {

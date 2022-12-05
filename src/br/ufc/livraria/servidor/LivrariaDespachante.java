@@ -43,12 +43,12 @@ public class LivrariaDespachante {
         LivrariaEsqueleto e = new LivrariaEsqueleto();
         switch (m.methodId) {
             case "comprarLivro":
-                Livro l = gson.fromJson(m.arguments, Livro.class);
-                resposta = e.comprarLivro(l);
+//                Livro l = gson.fromJson(m.arguments, Livro.class);
+                resposta = e.comprarLivro(m.arguments);
                 break;
             case "renovarEstoque":
-                String[] str = m.arguments.split(" ");
-                resposta = e.renovarEstoque(Integer.parseInt(str[0]), Integer.parseInt(str[1]));
+//                String[] str = m.arguments.split(" ");
+                resposta = e.renovarEstoque(m.arguments);
                 break;
             case "consultarEstoque":
                 resposta = e.consultarEstoque();
@@ -60,8 +60,8 @@ public class LivrariaDespachante {
                 resposta = e.consultarSaldo();
                 break;
             case "venderLivro":
-                String[] args = m.arguments.split(" ");
-                resposta = e.venderLivro(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
+//                String[] args = m.arguments.split(" ");
+                resposta = e.venderLivro(m.arguments);
                 break;
 
             default:
