@@ -1,7 +1,7 @@
 package br.ufc.livraria;
 
-import br.ufc.livraria.servidor.Livraria;
 import br.ufc.livraria.model.Livro;
+import br.ufc.livraria.servidor.Livraria;
 
 import java.util.ArrayList;
 import java.util.Scanner;

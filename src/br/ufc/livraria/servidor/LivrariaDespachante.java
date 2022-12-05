@@ -4,8 +4,6 @@ import br.ufc.livraria.model.Livro;
 import com.google.gson.Gson;
 
 import java.io.IOException;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
 public class LivrariaDespachante {
 //    public byte[] selecionaEqueleto(Message request) {
@@ -50,7 +48,7 @@ public class LivrariaDespachante {
                 break;
             case "renovarEstoque":
                 String[] str = m.arguments.split(" ");
-                resposta = e.renovarEstoque(Integer.parseInt(str[0]),Integer.parseInt(str[1]));
+                resposta = e.renovarEstoque(Integer.parseInt(str[0]), Integer.parseInt(str[1]));
                 break;
             case "consultarEstoque":
                 resposta = e.consultarEstoque();
@@ -63,7 +61,7 @@ public class LivrariaDespachante {
                 break;
             case "venderLivro":
                 String[] args = m.arguments.split(" ");
-                resposta = e.venderLivro(Integer.parseInt(args[0]),Integer.parseInt(args[1]));
+                resposta = e.venderLivro(Integer.parseInt(args[0]), Integer.parseInt(args[1]));
                 break;
 
             default:

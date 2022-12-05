@@ -9,7 +9,6 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 
 public class Proxy {
     //UDPClient udp = new UDPClient();
@@ -30,14 +29,14 @@ public class Proxy {
     }
 
     public String renovarEstoque(int id, int qtdCompra) throws IOException {
-        String args = String.valueOf(id)+" "+String.valueOf(qtdCompra);
-        m = new Message(0,"livraria", "renovarEstoque",args);
+        String args = String.valueOf(id) + " " + String.valueOf(qtdCompra);
+        m = new Message(0, "livraria", "renovarEstoque", args);
         tcp.sendRequest(gson.toJson(m));
         return tcp.getResponse();
     }
 
     public double consultarSaldo() throws IOException {
-        m = new Message(0,"livraria", "consultarSaldo","consultarSaldo");
+        m = new Message(0, "livraria", "consultarSaldo", "consultarSaldo");
         tcp.sendRequest(gson.toJson(m));
         return Double.parseDouble(tcp.getResponse());
     }
@@ -46,20 +45,20 @@ public class Proxy {
     }
 
     public ArrayList<Livro> consultarEstoque() throws IOException {
-        m = new Message(0,"livraria", "consultarEstoque","consultarEstoque");
+        m = new Message(0, "livraria", "consultarEstoque", "consultarEstoque");
         tcp.sendRequest(gson.toJson(m));
         return gson.fromJson(tcp.getResponse(), ArrayList.class);
     }
 
     public String venderLivro(int id, int qtdVenda) throws IOException {
-        String args = String.valueOf(id)+" "+String.valueOf(qtdVenda);
-        m = new Message(0,"livraria", "venderLivro",args);
+        String args = String.valueOf(id) + " " + String.valueOf(qtdVenda);
+        m = new Message(0, "livraria", "venderLivro", args);
         tcp.sendRequest(gson.toJson(m));
         return tcp.getResponse();
     }
 
     public ArrayList<Venda> consultarVendas() throws IOException {
-        m = new Message(0,"livraria", "consultarVendas","consultarVendas");
+        m = new Message(0, "livraria", "consultarVendas", "consultarVendas");
         tcp.sendRequest(gson.toJson(m));
         return gson.fromJson(tcp.getResponse(), ArrayList.class);
     }

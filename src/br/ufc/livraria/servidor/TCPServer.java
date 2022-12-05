@@ -11,7 +11,8 @@ import java.net.Socket;
 
 public class TCPServer {
 
-    public TCPServer(){}
+    public TCPServer() {
+    }
 
     public static void main(String args[]) {
         try {
@@ -45,7 +46,7 @@ class Connection extends Thread {
 
     public void run() {
         try {// an echo server
-            while (true){
+            while (true) {
                 String data = in.readUTF();// read a line of data from the stream
                 Gson gson = new Gson();
                 Message m = gson.fromJson(data, Message.class);

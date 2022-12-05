@@ -39,33 +39,11 @@ public class LivrariaCliente {
                 } else if (genero.equalsIgnoreCase("comedia")) {
                     caracteristica = "capa brochura";
                 }
-                proxy.comprarLivro(new Livro("Harry Potter e a Pedra Filosofal", 50, 7, "aventura", "ilustracoes"));
-                proxy.comprarLivro(new Livro("Robison Crusoe", 55, 10, "aventura", "ilustracoes"));
-                proxy.comprarLivro(new Livro("Dom Quixote", 48, 12, "aventura", "ilustracoes"));
-                proxy.comprarLivro(new Livro("Romeu e Julieta", 29, 2, "drama", "capa dura"));
-                proxy.comprarLivro(new Livro("A paciente silenciosa", 35, 5, "drama", "capa dura"));
-                proxy.comprarLivro(new Livro("Hamlet", 25, 8, "drama", "capa dura"));
-                proxy.comprarLivro(new Livro("Divina Comédia", 25, 9, "comedia", "capa brochura"));
-                proxy.comprarLivro(new Livro("Paraíso", 30, 10, "comedia", "capa brochura"));
-                proxy.comprarLivro(new Livro("Até o Fim do Mundo", 15, 4, "comedia", "capa brochura"));
-
                 Livro l = new Livro(nome, valor, quantidade, genero, caracteristica);
                 System.out.println(proxy.comprarLivro(l));
                 System.out.println("Aperte Enter para voltar ao menu");
                 scanner.nextLine();
-
-                // Interagir com o usuario via stdin.readLine() para setar
-                // argumentos de entada
-                // ex:
-                // System.out.println("Digite seu nome: ");
-                // person.setName(stdin.readLine());
-
-                // Por fim, chamar metodo do proxy correspondente à operação
-                // escolhida
-                // proxy.addPerson(person.build());
-
                 break;
-
             case 2:
                 //Comprar livro(alterar a quantidade de um livro já existente e o saldo)
                 System.out.println(proxy.consultarEstoque());
@@ -78,7 +56,6 @@ public class LivrariaCliente {
                 System.out.println("Aperte Enter para voltar ao menu");
                 scanner.nextLine();
                 break;
-
             case 3:
                 boolean vendendo = true;
                 while (vendendo) {
@@ -96,7 +73,6 @@ public class LivrariaCliente {
                 System.out.println("Aperte Enter para voltar ao menu");
                 scanner.nextLine();
                 break;
-
             case 4:
                 System.out.println(proxy.consultarSaldo());
                 break;
@@ -105,15 +81,12 @@ public class LivrariaCliente {
                 System.out.println("Aperte Enter para voltar ao menu");
                 scanner.nextLine();
                 break;
-
             case 6:
                 System.out.println(proxy.consultarEstoque());
                 break;
-
             case 0:
                 proxy.finaliza();
                 break;
-
             default:
                 System.out.println("Operação invalida, tente outra.");
                 break;
@@ -124,13 +97,13 @@ public class LivrariaCliente {
     public static void printMenu() {
         System.out.println("Seja bem-vindo a livraria do Sr Code!\n" +
                 "O que quer fazer?\n" +
-                "0 - Fechar o sistema\n" +//ok
-                "1 - Comprar um livro\n" +//ok
-                "2 - Renovar estoque de um livro\n" +//ok -> falta fazer mais de um livro
-                "3 - Vender livros\n" +//Falta adicionar a venda de livros diferentes
-                "4 - Consultar Saldo\n" +//ok
-                "5 - Consultar Vendas\n" +//ok
-                "6 - Consultar estoque de livros");//ok
+                "0 - Fechar o sistema\n" +
+                "1 - Comprar um livro\n" +
+                "2 - Renovar estoque de um livro\n" +
+                "3 - Vender livros\n" +
+                "4 - Consultar Saldo\n" +
+                "5 - Consultar Vendas\n" +
+                "6 - Consultar estoque de livros");
     }
 
     public static void main(String[] args) throws IOException {

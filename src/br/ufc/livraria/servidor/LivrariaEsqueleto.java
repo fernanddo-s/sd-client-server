@@ -5,7 +5,6 @@ import br.ufc.livraria.model.Venda;
 import com.google.gson.Gson;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class LivrariaEsqueleto {
     Livraria livraria;
@@ -21,16 +20,16 @@ public class LivrariaEsqueleto {
         return gson.toJson(livros);
     }
 
-    public String consultarSaldo(){
+    public String consultarSaldo() {
         return Double.toString(livraria.getSaldo());
     }
 
-    public String comprarLivro(Livro livro){
-        return  livraria.comprarLivro(livro);
+    public String comprarLivro(Livro livro) {
+        return livraria.comprarLivro(livro);
     }
 
-    public String renovarEstoque(int id, int qtdCompra){
-        return livraria.renovarEstoque(id,qtdCompra);
+    public String renovarEstoque(int id, int qtdCompra) {
+        return livraria.renovarEstoque(id, qtdCompra);
     }
 
     public String venderLivro(int id, int qtdVenda) {
