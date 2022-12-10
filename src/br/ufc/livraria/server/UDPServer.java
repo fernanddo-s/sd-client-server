@@ -1,9 +1,6 @@
-package br.ufc.livraria.servidor;
+package br.ufc.livraria.server;
 
 import br.ufc.livraria.client.UDPClient;
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
-import com.google.gson.stream.JsonReader;
 
 import java.io.IOException;
 import java.net.DatagramPacket;

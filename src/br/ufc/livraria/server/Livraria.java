@@ -1,7 +1,8 @@
-package br.ufc.livraria.servidor;
+package br.ufc.livraria.server;
 
 import br.ufc.livraria.model.ItemVenda;
 import br.ufc.livraria.model.Livro;
+import br.ufc.livraria.model.Transacao;
 import br.ufc.livraria.model.Venda;
 
 import java.util.ArrayList;
@@ -62,7 +63,9 @@ public class Livraria {
         return "Saldo insuficiente! Seu saldo é: " + this.getSaldo() + " e voĉe precisa de: " + livro.getValor() * livro.getQuantidadeEstoque();
     }
 
-    public String renovarEstoque(int id, int qtdCompra) {
+    public String renovarEstoque(Transacao t) {
+        int id = t.getId();
+        int qtdCompra = t.getQtd();
         if (id > this.getLivros().size()) {
             return "Livro não encontrado";
         }
@@ -88,7 +91,9 @@ public class Livraria {
 
     ArrayList<Venda> vds = new ArrayList<>();
 
-    public String venderLivro(int id, int qtdVenda) {
+    public String venderLivro(Transacao t) {
+        int id = t.getId();
+        int qtdVenda = t.getQtd();
         if (id > this.getLivros().size() - 1) {
             return "Livro não encontrado";
         }

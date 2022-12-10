@@ -1,9 +1,10 @@
 package br.ufc.livraria.client;
 
 import br.ufc.livraria.model.Livro;
+import br.ufc.livraria.model.Transacao;
 import br.ufc.livraria.model.Venda;
-import br.ufc.livraria.servidor.Message;
-import br.ufc.livraria.servidor.UDPServer;
+import br.ufc.livraria.server.Message;
+import br.ufc.livraria.server.UDPServer;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
@@ -34,8 +35,9 @@ public class Proxy {
     }
 
     public String renovarEstoque(int id, int qtdCompra) throws IOException {
-        String args = String.valueOf(id) + " " + String.valueOf(qtdCompra);
-        m = new Message(0, "livraria", "renovarEstoque", args);
+        Transacao t = new Transacao(id,qtdCompra);
+//        String args = String.valueOf(id) + " " + String.valueOf(qtdCompra);
+        m = new Message(0, "livraria", "renovarEstoque", gson.toJson(t));
         udp.sendResponse(gson.toJson(m));
         return udp.getResponse();
     }
@@ -60,8 +62,11 @@ public class Proxy {
     }
 
     public String venderLivro(int id, int qtdVenda) throws IOException {
-        String args = String.valueOf(id) + " " + String.valueOf(qtdVenda);
-        m = new Message(0, "livraria", "venderLivro", args);
+        Transacao t = new Transacao(id,qtdVenda);
+//        String args = String.valueOf(id) + " " + String.valueOf(qtdCompra);
+//        m = new Message(0, "livraria", "renovarEstoque", gson.toJson(t));
+//        String args = String.valueOf(id) + " " + String.valueOf(qtdVenda);
+        m = new Message(0, "livraria", "venderLivro", gson.toJson(t));
         udp.sendResponse(gson.toJson(m));
         return udp.getResponse();
     }

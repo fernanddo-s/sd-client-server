@@ -1,4 +1,4 @@
-package br.ufc.livraria.servidor;
+package br.ufc.livraria.server;
 
 public class Message {
     public static int geraId = 0;

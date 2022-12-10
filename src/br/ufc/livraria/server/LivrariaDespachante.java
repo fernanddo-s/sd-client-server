@@ -1,10 +1,7 @@
-package br.ufc.livraria.servidor;
+package br.ufc.livraria.server;
 
-import br.ufc.livraria.model.Livro;
 import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonWriter;
 
 import java.io.*;
 
@@ -51,11 +48,9 @@ public class LivrariaDespachante {
         LivrariaEsqueleto e = new LivrariaEsqueleto();
         switch (m.methodId) {
             case "comprarLivro":
-//                Livro l = gson.fromJson(m.arguments, Livro.class);
                 resposta = e.comprarLivro(m.arguments);
                 break;
             case "renovarEstoque":
-//                String[] str = m.arguments.split(" ");
                 resposta = e.renovarEstoque(m.arguments);
                 break;
             case "consultarEstoque":
