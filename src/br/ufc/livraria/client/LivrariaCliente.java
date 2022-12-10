@@ -39,7 +39,7 @@ public class LivrariaCliente {
                 } else if (genero.equalsIgnoreCase("comedia")) {
                     caracteristica = "capa brochura";
                 }
-                Livro l = new Livro(nome, valor, quantidade, genero, caracteristica);
+                Livro l = new Livro(nome, valor, quantidade, genero,caracteristica);
                 System.out.println(proxy.comprarLivro(l));
                 System.out.println("Aperte Enter para voltar ao menu");
                 scanner.nextLine();
@@ -82,7 +82,9 @@ public class LivrariaCliente {
                 scanner.nextLine();
                 break;
             case 5:
-                System.out.println(proxy.consultarVendas());
+                for (int i = 0; i < proxy.consultarVendas().size(); i++){
+                    System.out.println(proxy.consultarVendas().get(i));
+                }
                 System.out.println("Aperte Enter para voltar ao menu");
                 scanner.nextLine();
                 break;
@@ -90,9 +92,14 @@ public class LivrariaCliente {
                 for (int i = 0; i < proxy.consultarEstoque().size(); i++){
                     System.out.println(proxy.consultarEstoque().get(i));
                 }
+                System.out.println("Aperte Enter para voltar ao menu");
+                scanner.nextLine();
                 break;
             case 0:
                 proxy.finaliza();
+                break;
+            case 9:
+                proxy.tetse("String:mensagem");
                 break;
             default:
                 System.out.println("Operação invalida, tente outra.");

@@ -10,6 +10,14 @@ public class Livro {
     private String genero;
     private String caracteristica;
 
+    public Livro(String nome, double valor, int quantidadeEstoque, String genero) {
+        this.id = gerador_de_id++;
+        this.nome = nome;
+        this.valor = valor;
+        this.quantidadeEstoque = quantidadeEstoque;
+        this.genero = genero;
+    }
+
     public Livro(String nome, double valor, int quantidadeEstoque, String genero, String caracteristica) {
         this.id = gerador_de_id++;
         this.nome = nome;

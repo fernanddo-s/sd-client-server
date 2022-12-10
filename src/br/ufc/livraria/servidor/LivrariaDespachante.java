@@ -2,8 +2,11 @@ package br.ufc.livraria.servidor;
 
 import br.ufc.livraria.model.Livro;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 
-import java.io.IOException;
+import java.io.*;
 
 public class LivrariaDespachante {
 //    public byte[] selecionaEqueleto(Message request) {
@@ -37,8 +40,13 @@ public class LivrariaDespachante {
 //        return resposta;
 //    }
 
-    public String invoke(Message m) throws IOException {
+    public String invoke(String str) throws IOException {
+//        GsonBuilder gsonBuilder = new GsonBuilder().setLenient();
+//        Message m = gsonBuilder.create().fromJson(str, Message.class);
+        Reader reader = new StringReader(str);
+        JsonReader r = new JsonReader(reader);
         Gson gson = new Gson();
+        Message m = gson.fromJson(r, Message.class);
         String resposta = "";
         LivrariaEsqueleto e = new LivrariaEsqueleto();
         switch (m.methodId) {

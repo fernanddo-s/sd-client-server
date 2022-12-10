@@ -45,11 +45,4 @@ public class LivrariaEsqueleto {
         Gson gson = new Gson();
         return gson.toJson(vendas);
     }
-
-
-//    public byte[] remove(ByteString args) {
-//        // (1) Desempacota argumento de entrada
-//        // (2) chama o metodo do servente
-//        // (3) empacota resposta do método servente e retorna
-//    }
 }
