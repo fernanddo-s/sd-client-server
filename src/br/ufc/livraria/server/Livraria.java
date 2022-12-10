@@ -10,8 +10,6 @@ import java.util.ArrayList;
 public class Livraria {
     private static Livraria livraria = new Livraria();
     private ArrayList<Venda> vendas = new ArrayList<>();
-
-    //Tem os livros disponiveis na livraria com quantidade de estoque
     private ArrayList<Livro> livros = new ArrayList<>();
 
     private double saldo = 100000;
