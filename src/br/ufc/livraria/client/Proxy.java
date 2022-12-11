@@ -36,7 +36,6 @@ public class Proxy {
 
     public String renovarEstoque(int id, int qtdCompra) throws IOException {
         Transacao t = new Transacao(id,qtdCompra);
-//        String args = String.valueOf(id) + " " + String.valueOf(qtdCompra);
         m = new Message(0, "livraria", "renovarEstoque", gson.toJson(t));
         udp.sendResponse(gson.toJson(m));
         return udp.getResponse();
@@ -63,9 +62,6 @@ public class Proxy {
 
     public String venderLivro(int id, int qtdVenda) throws IOException {
         Transacao t = new Transacao(id,qtdVenda);
-//        String args = String.valueOf(id) + " " + String.valueOf(qtdCompra);
-//        m = new Message(0, "livraria", "renovarEstoque", gson.toJson(t));
-//        String args = String.valueOf(id) + " " + String.valueOf(qtdVenda);
         m = new Message(0, "livraria", "venderLivro", gson.toJson(t));
         udp.sendResponse(gson.toJson(m));
         return udp.getResponse();

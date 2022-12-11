@@ -78,7 +78,6 @@ public class Livraria {
         }
     }
 
-    //deve mostrar a lista de livros em estoque
     public ArrayList<Livro> consultarEstoque() {
         return this.livros;
     }

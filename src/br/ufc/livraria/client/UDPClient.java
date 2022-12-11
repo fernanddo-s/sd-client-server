@@ -14,7 +14,7 @@ public class UDPClient {
         this.clienteSocket = new DatagramSocket(port);
     }
 
-    public void sendResponse(String args) throws SocketException, UnknownHostException, IOException {
+    public void sendResponse(String args) throws IOException {
         enviaDados = new byte[1024];
         enviaDados = args.getBytes();
 

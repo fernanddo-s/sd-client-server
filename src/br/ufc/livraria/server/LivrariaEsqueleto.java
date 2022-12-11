@@ -14,7 +14,6 @@ public class LivrariaEsqueleto {
         livraria = Livraria.getInstance();
     }
 
-    //deve mostrar a lista de livros em estoque
     public String consultarEstoque() {
         ArrayList<Livro> livros = livraria.consultarEstoque();
         Gson gson = new Gson();
@@ -32,14 +31,12 @@ public class LivrariaEsqueleto {
     }
 
     public String renovarEstoque(String args) {
-//        String[] str = args.split(" ");
         Gson gson = new Gson();
         Transacao t = gson.fromJson(args, Transacao.class);
         return livraria.renovarEstoque(t);
     }
 
     public String venderLivro(String args) {
-//        String[] str = args.split(" ");
         Gson gson = new Gson();
         Transacao t = gson.fromJson(args, Transacao.class);
         return livraria.venderLivro(t);

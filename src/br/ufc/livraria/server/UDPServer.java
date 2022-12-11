@@ -13,18 +13,18 @@ public class UDPServer {
         DatagramSocket servidorSocket = null;
         try {
             servidorSocket = new DatagramSocket(UDPClient.PORT);
-            System.out.println("Servidor criado na porta: "+UDPClient.PORT);
-        }catch (Exception e){
-            System.out.println("Erro: "+e.getMessage());
+            System.out.println("Servidor criado na porta: " + UDPClient.PORT);
+        } catch (Exception e) {
+            System.out.println("Erro: " + e.getMessage());
         }
 
         byte[] dadosRecebidos = new byte[1024];
         byte[] dadosEnviados = new byte[1024];
 
-        while (true){
+        while (true) {
             DatagramPacket packet = new DatagramPacket(dadosRecebidos, dadosRecebidos.length);
             servidorSocket.receive(packet);
-            String mensagem = new String(packet.getData(),0, dadosRecebidos.length);
+            String mensagem = new String(packet.getData(), 0, dadosRecebidos.length);
 
             LivrariaDespachante d = new LivrariaDespachante();
 

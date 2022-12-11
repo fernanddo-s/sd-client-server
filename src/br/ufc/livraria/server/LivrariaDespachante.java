@@ -3,7 +3,9 @@ package br.ufc.livraria.server;
 import com.google.gson.Gson;
 import com.google.gson.stream.JsonReader;
 
-import java.io.*;
+import java.io.IOException;
+import java.io.Reader;
+import java.io.StringReader;
 
 public class LivrariaDespachante {
 
