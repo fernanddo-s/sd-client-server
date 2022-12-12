@@ -16,12 +16,12 @@ public class LivrariaDespachante {
         Message m = gson.fromJson(r, Message.class);
         String resposta = "";
         LivrariaEsqueleto e = new LivrariaEsqueleto();
-        switch (m.methodId) {
+        switch (m.getMethodId()) {
             case "comprarLivro":
-                resposta = e.comprarLivro(m.arguments);
+                resposta = e.comprarLivro(m.getArguments());
                 break;
             case "renovarEstoque":
-                resposta = e.renovarEstoque(m.arguments);
+                resposta = e.renovarEstoque(m.getArguments());
                 break;
             case "consultarEstoque":
                 resposta = e.consultarEstoque();
@@ -33,7 +33,7 @@ public class LivrariaDespachante {
                 resposta = e.consultarSaldo();
                 break;
             case "venderLivro":
-                resposta = e.venderLivro(m.arguments);
+                resposta = e.venderLivro(m.getArguments());
                 break;
             default:
                 System.out.println("Erro");

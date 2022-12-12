@@ -30,7 +30,7 @@ public class UDPClient {
 
         clienteSocket.receive(recebePacote);
 
-        String msgServer = new String(recebePacote.getData(), 0, enviaDados.length);
+        String msgServer = new String(recebePacote.getData(), 0, recebeDados.length);
         recebeDados = new byte[1024];
         return msgServer;
     }

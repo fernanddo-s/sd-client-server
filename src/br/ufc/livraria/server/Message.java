@@ -2,11 +2,11 @@ package br.ufc.livraria.server;
 
 public class Message {
     public static int geraId = 0;
-    int type;
-    int id;
-    String obfReference;
-    String methodId;
-    String arguments;
+    private int type;
+    private int id;
+    private String obfReference;
+    private String methodId;
+    private String arguments;
 
     public Message() {
     }
@@ -19,11 +19,43 @@ public class Message {
         this.arguments = arguments;
     }
 
-    public String getObjectReference() {
-        return this.obfReference;
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getObfReference() {
+        return obfReference;
+    }
+
+    public void setObfReference(String obfReference) {
+        this.obfReference = obfReference;
     }
 
     public String getMethodId() {
-        return this.methodId;
+        return methodId;
+    }
+
+    public void setMethodId(String methodId) {
+        this.methodId = methodId;
+    }
+
+    public String getArguments() {
+        return arguments;
+    }
+
+    public void setArguments(String arguments) {
+        this.arguments = arguments;
     }
 }

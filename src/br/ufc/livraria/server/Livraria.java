@@ -67,6 +67,9 @@ public class Livraria {
         if (id > this.getLivros().size()) {
             return "Livro não encontrado";
         }
+        if (this.getLivros().size() == 0){
+            return "Você não possui livros cadastrados";
+        }
         double saldoAtual = this.getSaldo();
         double valorCompra = qtdCompra * this.getLivros().get(id).getValor();
         if (saldoAtual >= valorCompra) {

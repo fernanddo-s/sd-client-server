@@ -98,9 +98,6 @@ public class LivrariaCliente {
             case 0:
                 proxy.finaliza();
                 break;
-            case 9:
-                proxy.tetse("String:mensagem");
-                break;
             default:
                 System.out.println("Operação invalida, tente outra.");
                 break;

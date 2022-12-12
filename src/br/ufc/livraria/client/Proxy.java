@@ -14,13 +14,6 @@ import java.util.ArrayList;
 public class Proxy {
     UDPClient udp = new UDPClient(UDPServer.PORT);
 
-    public void tetse(String teste) throws IOException {
-        udp.sendResponse(teste);
-    }
-
-    //    TCPClient tcp = new TCPClient("localhost", 7896);
-    DataInputStream in;
-    DataOutputStream out;
     Gson gson = new Gson();
     Message m;
 
